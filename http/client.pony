@@ -1,6 +1,7 @@
 use "collections"
 use "net"
 use "net_ssl"
+use "promises"
 
 class HTTPClient
   """
@@ -114,6 +115,7 @@ class HTTPClient
   fun ref send_body(data: ByteSeq val, session: HTTPSession) =>
     session.write(data)
 
+    
 class _SessionGuard
   """
   Enforces the rule that an 'unsafe' request monopolizes the
